@@ -1,0 +1,47 @@
+{
+  "id": "vanta",
+  "name": "Vanta",
+  "description": "Query and manage compliance controls, tests, evidence, vendors, vulnerabilities, and policies.",
+  "categories": [
+    "Security",
+    "Compliance"
+  ],
+  "appUrl": "https://www.vanta.com",
+  "docsUrl": "https://developer.vanta.com/docs/vanta-mcp",
+  "notes": "Uses Vanta's official hosted MCP server. Vanta Admin access is required. The endpoint is region-specific and currently in beta for all customers.",
+  "popularityRank": 41,
+  "connectionOptions": [
+    {
+      "id": "oauth",
+      "provider": "mcp",
+      "auth": {
+        "strategy": "oauth2",
+        "oauth": {
+          "authorizationUrl": "https://app.vanta.com/oauth/authorize",
+          "tokenUrl": "https://api.vanta.com/oauth/token",
+          "registrationUrl": "https://api.vanta.com/oauth/register",
+          "scopes": [
+            "mcp-api.all:read",
+            "mcp-api.all:write"
+          ],
+          "pkce": true,
+          "clientAuthentication": "none"
+        }
+      },
+      "transport": {
+        "kind": "shttp",
+        "url": "https://mcp.vanta.com/mcp",
+        "urlEditable": true
+      }
+    }
+  ],
+  "keywords": [
+    "compliance",
+    "controls",
+    "evidence",
+    "security",
+    "vendor risk",
+    "vulnerabilities"
+  ],
+  "installHint": "Use https://mcp.vanta.com/mcp for US tenants, https://mcp.eu.vanta.com/mcp for EU tenants, or https://mcp.aus.vanta.com/mcp for Australian tenants. Edit the MCP URL to match your Vanta region, then sign in with a Vanta Admin account."
+}
